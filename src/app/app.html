@@ -1,0 +1,22 @@
+<hr />
+
+<button #randomBtn>Load random todo</button>
+
+<div *ngIf="randomTodo$ | async as todo">
+  <h3>Random todo</h3>
+  <p>{{ todo.id }} - {{ todo.title }}</p>
+</div>
+
+<hr />
+
+<h3>Counter Todo</h3>
+
+<button (click)="decrement()">-</button>
+<span class="counter">
+  {{ counter$ | async }}
+</span>
+<button (click)="increment()">+</button>
+
+<div *ngIf="counterTodo$ | async as todo">
+  <p>{{ todo.id }} - {{ todo.title }}</p>
+</div>
